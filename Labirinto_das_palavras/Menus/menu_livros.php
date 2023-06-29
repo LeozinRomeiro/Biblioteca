@@ -1,4 +1,4 @@
-<?php include '/xampp/htdocs/Labirinto_das_palavras/Menus/menu_cabecalho.php'; //Incluir o menu inicial na parte de cima ?>
+<?php include '../Labirinto_das_palavras/Menus/menu_cabecalho.php'; //Incluir o menu inicial na parte de cima ?>
 
 <!DOCTYPE html>
 <html>
