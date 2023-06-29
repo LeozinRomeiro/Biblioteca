@@ -31,4 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+// Obte a lista de alunos do banco de dados
+$consulta_todos_emprestimos="SELECT * FROM emprestimo_livro";
+$resultado_todos_emprestimos= mysqli_query($conn, $consulta_todos_emprestimos);
+
 ?>
