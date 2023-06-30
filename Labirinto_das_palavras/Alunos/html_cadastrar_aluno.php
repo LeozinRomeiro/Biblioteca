@@ -1,5 +1,5 @@
 <?php
-require_once 'cadastrar_aluno.php';
+require_once ("cadastrar_aluno.php");
 ?>
 
 

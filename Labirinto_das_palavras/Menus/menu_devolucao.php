@@ -16,7 +16,7 @@ cabecalho();
     <h1>Locar</h1>
 
     <div class="div_menu">
-        <li class="li_menu"><a class="a_menu" href="../Locar/html_locar.php">Registrar locação</a><br></li>
+        <li class="li_menu"><a class="a_menu" href="../devolucao/html_devolucao.php">Registrar devolucao</a><br></li>
     </div>
 
 </body>

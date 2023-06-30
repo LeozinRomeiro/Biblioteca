@@ -1,6 +1,5 @@
 <?php
-require_once '/xampp/htdocs/Labirinto_das_palavras/conexao.php';
-require_once '/xampp/htdocs/Labirinto_das_palavras/funcoes.php';
+include ("../Configure/funcoes.php");
 
 // Consulta SQL para recuperar todas as editoras
 $sqlEditoras = "SELECT id_editora, nome_editora FROM editora";

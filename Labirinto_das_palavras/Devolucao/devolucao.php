@@ -1,7 +1,6 @@
 <?php
 
-require_once '/xampp/htdocs/Labirinto_das_palavras/conexao.php';
-require_once '/xampp/htdocs/Labirinto_das_palavras/funcoes.php';
+include ("../Configure/funcoes.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificar se o formulário foi enviado
@@ -30,5 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "ID do empréstimo não especificado.";
     }
 }
+
+// Obte a lista de alunos do banco de dados
+$consulta_todos_emprestimos="SELECT * FROM emprestimo_livro";
+$resultado_todos_emprestimos= mysqli_query($conn, $consulta_todos_emprestimos);
 
 ?>

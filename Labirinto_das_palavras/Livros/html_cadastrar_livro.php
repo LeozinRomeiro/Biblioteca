@@ -1,6 +1,8 @@
 <?php
+
 require_once 'cadastrar_livro.php';
-require_once '../funcoes.php';
+
+require_once ("../Configure/funcoes.php");
 
 ?>
 

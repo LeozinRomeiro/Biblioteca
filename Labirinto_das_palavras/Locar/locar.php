@@ -1,6 +1,6 @@
 <?php
 // Incluir o arquivo de conexão
-require_once '/xampp/htdocs/Labirinto_das_palavras/conexao.php';
+include ("../Configure/funcoes.php");
 
 // Verificar se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -12,12 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Inserir os dados na tabela emprestimo_livro
     $inserirEmprestimo = "INSERT INTO emprestimo_livro (data_emprestimo, data_devolucao, id_aluno, id_exemplar_livro) VALUES ('$dataEmprestimo', '$dataDevolucao', $alunoId, $exemplarId)";
-    $resultadoInserir = mysqli_query($conexao, $inserirEmprestimo);
+    $resultadoInserir = mysqli_query($conn, $inserirEmprestimo);
 
     if ($resultadoInserir) {
         echo "Locação realizada com sucesso.";
     } else {
-        echo "Ocorreu um erro ao realizar a locação: " . mysqli_error($conexao);
+        echo "Ocorreu um erro ao realizar a locação: " . mysqli_error($conn);
     }
 }
 

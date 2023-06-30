@@ -1,42 +1,31 @@
 <?php
-require_once '/xampp/htdocs/Labirinto_das_palavras/conexao.php';
-require_once '/xampp/htdocs/Labirinto_das_palavras/funcoes.php';
+include ("../Configure/funcoes.php");
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificar se os campos foram preenchidos
-    if (isset($_POST['nome']) && isset($_POST['ano']) && isset($_POST['editora'])) {
+    if (isset($_POST['nome']) && isset($_POST['cpf']) && isset($_POST['ra'])) {
         $nome = $_POST['nome'];
-        $ano = $_POST['ano'];
-        $editora = $_POST['editora'];
-        $autor=$_POST['autor'];
-        $exemplares=~$_POST['exemplares'];
+        $cpf = $_POST['cpf'];
+        $ra = $_POST['ra'];
 
-        if(registro_repetido($conn,'livro','nome_livro',$nome)===true or registro_repetido($conn,'autor','nome_autor',$autor)===true){
+        if(registro_repetido($conn,'aluno','cpf',$cpf)===false){
             
             
                 // Preparar a consulta SQL
-            $sql_livro = "INSERT INTO livro (nome_livro, ano_publicacao, id_editora) VALUES ('$nome', $ano, $editora)";
-            $sql_autor="INSERT INTO exemplar_livro(nome_autor) VALUES ('$autor')";
-            $sql_numero="INSERT INTO autor(numero_exemplar) VALUES ('$numero')";
+            $sql_aluno = "INSERT INTO aluno (nome_aluno, cpf, ra) VALUES ('$nome', $cpf, $ra)";
 
-            while ($i < $exemplares ) { 
-                $numero= mt_rand(10000, 99999);
-                if($conn->query($sql_numero)===TRUE){
-                    $i++;
-                }
-            } 
 
             // Executar a consulta SQL
-            if ($conn->query($sql_livro) === TRUE and $conn->query($sql_autor) === TRUE) {
+            if ($conn->query($sql_aluno) === TRUE) {
 
-                echo "Livro cadastrado com sucesso!";
+                echo "Aluno cadastrado com sucesso!";
             } else {
-                echo "Erro ao cadastrar o livro: " . $conn->error;
+                echo "Erro ao cadastrar o Aluno: " . $conn->error;
             }
         
         }else{
-            echo "Livro já cadastrado!";    
+            echo "Aluno já cadastrado!";    
         }
 
             

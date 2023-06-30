@@ -47,7 +47,7 @@ require_once 'locar.php';
                         <label class="label_cadastro" for="data_devolucao">Data de Devolução:</label><br><br>
                     </div>
                     <br><br>
-                    <input type="submit" value="Locar Livro">
+                    <input class="submit_cadastro" type="submit" value="Locar Livro">
                 </fieldset>
             </div>
         </form>
